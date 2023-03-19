@@ -3,6 +3,7 @@ package products
 import (
 	c "commerce-platform/core/config"
 	database "commerce-platform/core/database"
+	model "commerce-platform/core/models"
 )
 
 type Product struct {
@@ -12,7 +13,7 @@ type Product struct {
 	Description string  `gorm:"column:description"`
 	Price       float32 `gorm:"column:price;not null"`
 	Branch      string  `gorm:"column:branch;not null"`
-	// model.BaseModel
+	model.BaseModel
 }
 
 type IProductService interface {

@@ -34,7 +34,14 @@ type IProductTransformer interface {
 type ProductTransformer struct{}
 
 func (t *ProductTransformer) Transform(product Product) ProductDto {
-	return ProductDto(product)
+	return ProductDto{
+		ID:          product.ID,
+		Name:        product.Name,
+		ImgURL:      product.ImgURL,
+		Description: product.Description,
+		Price:       product.Price,
+		Branch:      product.Branch,
+	}
 }
 
 func (t *ProductTransformer) TransformMultiple(products []Product) []ProductDto {
