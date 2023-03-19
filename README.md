@@ -63,4 +63,11 @@ Then use below command
 golangci-lint run 
 ```
 
+**SOME CURL TO TEST DATA**
+1/ The curl to get the list activity
+```
+curl --location --request GET 'http://localhost:3000/api/activities?skip=0&take=10' \
+--header 'X-Person: Jerry'
+```
+
 
