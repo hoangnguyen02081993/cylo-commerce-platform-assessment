@@ -8,7 +8,7 @@ type ProductFilterDto struct {
 }
 
 type ProductSortDto struct {
-	SortField     string `form:"s" json:"sortField"`
+	SortField     string `form:"sortField" json:"sortField"`
 	SortDirection string `form:"sortDirection" json:"sortDirection"`
 }
 
