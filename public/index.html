@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/index.js"></script>
+    <title>e-commerce website</title>
+</head>
+<body>
+	<h1>Product List</h1>
+	<div class="filters">
+        <div><h3>Search</h3></div>
+        <div class="filters-item">
+            <label>By name:</label>
+            <input type="text" id="name-filter" placeholder="Enter product name" onchange="onFilterNameChanged(this)">
+        </div>
+        <div class="filters-item">
+            <label>By price:</label>
+            <select id="price-filter" onchange="onFilterPriceChanged(this)">
+                <option value="">All prices</option>
+                <option value="0-20">$0 - $20</option>
+                <option value="20-40">$20 - $40</option>
+                <option value="40-80">$40 - $80</option>
+                <option value="80+">$80+</option>
+            </select>
+        </div>
+        <div class="filters-item">
+            <label>By branch:</label>
+            <select id="branch-filter" onchange="onFilterBranchChanged(this)">
+                <option value="">All branches</option>
+                <option value="Bia Sài Gòn">Bia Sài Gòn</option>
+                <option value="Cơm Bento">Cơm Bento</option>
+                <option value="Bánh Ngọt">Bánh Ngọt</option>
+                <option value="Sữa tươi">Sữa tươi</option>
+            </select>
+        </div>
+	</div>
+    <div class="filters">
+        <div><h3>Sort</h3></div>
+        
+        <div class="filters-item">
+            <label>Sort by</label>
+            <select id="sort-by" onchange="onSortFieldChanged(this)">
+                <option value="">No sort</option>
+                <option value="name">Name</option>
+                <option value="price">Price</option>
+                <option value="branch">Branch</option>
+            </select>
+        </div>
+        <div class="filters-item">
+            <label>Sort direction</label>
+            <select id="sort-direction" onchange="onSortDirectionChanged(this)">
+                <option value="asc">Asc</option>
+                <option value="desc">Desc</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="onChangePerson()">Change person id (for test)</button>
+        </div>
+	</div>
+	<ul id="product-list" class="product-list">
+	</ul>
+</body>
+</html>
