@@ -48,6 +48,10 @@ For case don't need, it can be run with simple command
 ```
 go run main.go
 ```
+And then access to the link
+```
+http://localhost:3000
+```
 
 **HOW TO RUN TEST**
 ```
